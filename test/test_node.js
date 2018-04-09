@@ -32,6 +32,7 @@ console.log('\n');
 
 // Dayu 20180409
 // 计算左上角经纬度
+console.log('## lnglat result by level 17:');
 lnglat_gaode = TileLnglatTransformGaode.pixelToLnglat(0, 0, 106594, 56585, 17);
 console.log('top left to lnglat result:', lnglat_gaode);
 // 计算右下角经纬度
@@ -42,9 +43,9 @@ console.log('\n');
 // bottom right to lnglat result: { lng: 114.15343165397644, lat: 22.411038440074023 }
 // 利用17级计算出来的经纬度，反过来计算18级的瓦片编码范围，然后反向代理爬去，
 
-// 计算得到 18级瓦片
+// 计算得到 18级瓦片 个数1008*1149
 // to tile result: { tileX: 213188, tileY: 113170 }
-// 
+// to tile result: { tileX: 214195, tileY: 114319 }
 
 
 
