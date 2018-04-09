@@ -12,10 +12,10 @@ var TileLnglatTransformBing = TileLnglatTransform.TileLnglatTransformBing;
 
 console.log(TileLnglatTransformBing)
 var lnglat = {
-  lng: 113.3964152,
-  lat: 23.0581857
+  lng: 114.15343165397644,
+  lat: 22.411038440074023
 };
-var level = 15;
+var level = 18;
 
 // test for Gaode map
 // Google map work like Gaode map
@@ -29,6 +29,24 @@ console.log('to pixel result:', pixel_gaode);
 var lnglat_gaode = TileLnglatTransformGaode.pixelToLnglat(pixel_gaode.pixelX, pixel_gaode.pixelY, tile_gaode.tileX, tile_gaode.tileY, level);
 console.log('to lnglat result:', lnglat_gaode);
 console.log('\n');
+
+// Dayu 20180409
+// 计算左上角经纬度
+lnglat_gaode = TileLnglatTransformGaode.pixelToLnglat(0, 0, 106594, 56585, 17);
+console.log('top left to lnglat result:', lnglat_gaode);
+// 计算右下角经纬度
+lnglat_gaode = TileLnglatTransformGaode.pixelToLnglat(255, 255, 107097, 57159, 17);
+console.log('bottom right to lnglat result:', lnglat_gaode);
+console.log('\n');
+// top left to lnglat result: { lng: 112.7691650390625, lat: 23.86323358998692 }
+// bottom right to lnglat result: { lng: 114.15343165397644, lat: 22.411038440074023 }
+// 利用17级计算出来的经纬度，反过来计算18级的瓦片编码范围，然后反向代理爬去，
+
+// 计算得到 18级瓦片
+// to tile result: { tileX: 213188, tileY: 113170 }
+// 
+
+
 
 // test for Baidu map
 // test data from http://www.cnblogs.com/jz1108/archive/2011/07/02/2095376.html
