@@ -12,10 +12,10 @@ var TileLnglatTransformBing = TileLnglatTransform.TileLnglatTransformBing;
 
 console.log(TileLnglatTransformBing)
 var lnglat = {
-  lng: 114.15343165397644,
-  lat: 22.411038440074023
+  lng: 117.37784385681152,
+  lat: 20.117920224389103
 };
-var level = 18;
+var level = 16;
 
 // test for Gaode map
 // Google map work like Gaode map
@@ -33,19 +33,21 @@ console.log('\n');
 // Dayu 20180409
 // 计算左上角经纬度
 console.log('## lnglat result by level 17:');
-lnglat_gaode = TileLnglatTransformGaode.pixelToLnglat(0, 0, 106594, 56585, 17);
+lnglat_gaode = TileLnglatTransformGaode.pixelToLnglat(0, 0, 13176, 6983, 14);
 console.log('top left to lnglat result:', lnglat_gaode);
 // 计算右下角经纬度
-lnglat_gaode = TileLnglatTransformGaode.pixelToLnglat(255, 255, 107097, 57159, 17);
+lnglat_gaode = TileLnglatTransformGaode.pixelToLnglat(255, 255, 13533, 7256, 14);
 console.log('bottom right to lnglat result:', lnglat_gaode);
 console.log('\n');
-// top left to lnglat result: { lng: 112.7691650390625, lat: 23.86323358998692 }
-// bottom right to lnglat result: { lng: 114.15343165397644, lat: 22.411038440074023 }
+// lnglat result by level 14:
+// top left to lnglat result: { lng: 109.51171875, lat: 25.66133349895269 }
+// bottom right to lnglat result: { lng: 117.37784385681152, lat: 20.117920224389103 }
+
 // 利用17级计算出来的经纬度，反过来计算18级的瓦片编码范围，然后反向代理爬去，
 
-// 计算得到 18级瓦片 个数1008*1149
-// to tile result: { tileX: 213188, tileY: 113170 }
-// to tile result: { tileX: 214195, tileY: 114319 }
+// 计算得到广东省 16级瓦片 编码
+// top left tile result: { tileX: 52703, tileY: 27932 }
+// bottom right tile result: { tileX: 54135, tileY: 29027 }
 
 
 
